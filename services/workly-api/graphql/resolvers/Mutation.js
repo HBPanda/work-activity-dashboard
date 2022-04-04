@@ -44,9 +44,9 @@ const loginWithGithub = (parent, args, context) => {
         ? client.getLoginURL(availableScopes)
         : "Not possible!!";
 };
-const  registerUser = (parent, args, ctx) => {
-    const {username, password} = args;
-    user.push({ id, username, password});
+const  registerUser = (_parent, args, _ctx) => {
+    const {username, password, firstName, lastName} = args?.input;
+    users.push({ id, username, firstName, lastName, password});
     return `${id}`;
 }
 module.exports = {
